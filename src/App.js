@@ -31,7 +31,7 @@ function App() {
   const [selected, setSelected] = useState(null);
 
   const handleSelectedFriend = (friend) => {
-    setSelected(friend);
+    setSelected((cur) => (cur?.id === friend.id ? null : friend));
   };
 
   const handleAddFriend = (friend) => {
